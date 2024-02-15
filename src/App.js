@@ -1,5 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+// import {Authentication} from "./components/Authentication";
+// import { CapacityCredits } from './components/CapacityCredits';
+// import { EncryptAuthSig } from './components/EncryptAuthSig';
+import { SocialLogin } from './components/SocialLogin';
+// import { AuthContext } from './components/AuthContext';
 
 function App() {
   return (
@@ -17,6 +22,11 @@ function App() {
         >
           Learn React
         </a>
+      {/* <Authentication/> */}
+      {/* <CapacityCredits/> */}
+      {/* <EncryptAuthSig/> */}
+      <SocialLogin/>
+      {/* <AuthContext></AuthContext> */}
       </header>
     </div>
   );
