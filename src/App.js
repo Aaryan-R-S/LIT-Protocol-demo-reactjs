@@ -3,7 +3,8 @@ import './App.css';
 // import {Authentication} from "./components/Authentication";
 // import { CapacityCredits } from './components/CapacityCredits';
 // import { EncryptAuthSig } from './components/EncryptAuthSig';
-import { SocialLogin } from './components/SocialLogin';
+// import { SocialLogin } from './components/SocialLogin';
+import { DiscordAuth } from './components/DiscordAuth';
 // import { AuthContext } from './components/AuthContext';
 
 function App() {
@@ -25,7 +26,8 @@ function App() {
       {/* <Authentication/> */}
       {/* <CapacityCredits/> */}
       {/* <EncryptAuthSig/> */}
-      <SocialLogin/>
+      {/* <SocialLogin/> */}
+      <DiscordAuth/>
       {/* <AuthContext></AuthContext> */}
       </header>
     </div>
