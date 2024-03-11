@@ -1,5 +1,4 @@
 import * as LitJsSdk from "@lit-protocol/lit-node-client";
-
   
 export function EncryptAuthSig() {
 
@@ -53,28 +52,53 @@ export function EncryptAuthSig() {
                   ciphertext,
                   dataToEncryptHash,
                 };
+            }
+            async decrypt(ciphertext, dataToEncryptHash, accessControlConditions) {
+              if (!this.litNodeClient) {
+                await this.connect()
               }
-              async decrypt(ciphertext, dataToEncryptHash, accessControlConditions) {
-                if (!this.litNodeClient) {
-                  await this.connect()
-                }
-              
-                const authSig = await LitJsSdk.checkAndSignAuthMessage({ chain: 'ethereum' })
-                const decryptedString = LitJsSdk.decryptToString(
-                  {
-                    accessControlConditions,
-                    ciphertext,
-                    dataToEncryptHash,
-                    authSig,
-                    chain: 'ethereum',
-                  },
-                  this.litNodeClient,
-                );
-                return { decryptedString }
-              }
+            
+              const authSig = await LitJsSdk.checkAndSignAuthMessage({ chain: 'ethereum' })
+              const decryptedString = LitJsSdk.decryptToString(
+                {
+                  accessControlConditions,
+                  ciphertext,
+                  dataToEncryptHash,
+                  authSig,
+                  chain: 'ethereum',
+                },
+                this.litNodeClient,
+              );
+              return { decryptedString }
+            }
+          //   async encrypt1(){
+          //     const file = new File(["Encrypt & store on IPFS seamlessly with Lit 😎"], "filename.txt", {type: "text/plain"});
+          //     const authSig = await LitJsSdk.checkAndSignAuthMessage({ chain })
+
+          //     const ipfsCid = await encryptToIpfs({
+          //       authSig,
+          //       accessControlConditions,
+          //       chain,
+          //       string: "Encrypt & store on IPFS seamlessly with Lit 😎",
+          //       file, // If you want to encrypt a file instead of a string
+          //       litNodeClient: this.litNodeClient,
+          //       infuraId: process.env.REACT_APP_INFURA_ID,
+          //       infuraSecretKey: process.env.REACT_APP_INFURA_SECRET_KEY,
+          //     });
+          //     return ipfsCid;
+          //   }
+          //   async decrypt1(ipfsCid) {
+          //     const decryptedString = await LitJsSdk.decryptFromIpfs({
+          //       authSig,
+          //       ipfsCid, // This is returned from the above encryption
+          //       litNodeClient: this.litNodeClient,
+          //     });
+          //     return decryptedString;
+          // }
         }
         let myLit = new Lit(client)
         await myLit.connect()
+
         const {    ciphertext,
             dataToEncryptHash} = await myLit.encrypt()
             console.log(ciphertext, dataToEncryptHash);

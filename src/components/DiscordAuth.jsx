@@ -101,7 +101,7 @@ export function DiscordAuth() {
   }
 
   return (
-    <div>
+    <div className='App'>
       {/* <button onClick={authWithGoogle}>Auth With Google</button> */}
       <button onClick={authWithGoogle}>Auth With Discord</button>
     </div>

@@ -2,9 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 // import {Authentication} from "./components/Authentication";
 // import { CapacityCredits } from './components/CapacityCredits';
-// import { EncryptAuthSig } from './components/EncryptAuthSig';
+import { EncryptAuthSig } from './components/EncryptAuthSig';
 // import { SocialLogin } from './components/SocialLogin';
-import { DiscordAuth } from './components/DiscordAuth';
+// import { DiscordAuth } from './components/DiscordAuth';
 // import { AuthContext } from './components/AuthContext';
 
 function App() {
@@ -25,9 +25,9 @@ function App() {
         </a>
       {/* <Authentication/> */}
       {/* <CapacityCredits/> */}
-      {/* <EncryptAuthSig/> */}
+      <EncryptAuthSig/>
       {/* <SocialLogin/> */}
-      <DiscordAuth/>
+      {/* <DiscordAuth/> */}
       {/* <AuthContext></AuthContext> */}
       </header>
     </div>
