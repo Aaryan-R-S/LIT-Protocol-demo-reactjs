@@ -59,7 +59,7 @@ export function EncryptAuthSig() {
               }
             
               const authSig = await LitJsSdk.checkAndSignAuthMessage({ chain: 'ethereum' })
-              const decryptedString = LitJsSdk.decryptToString(
+              const decryptedString = await LitJsSdk.decryptToString(
                 {
                   accessControlConditions,
                   ciphertext,
