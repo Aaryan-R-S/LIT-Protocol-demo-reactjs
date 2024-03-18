@@ -6,6 +6,7 @@ export function EncryptAuthSig() {
         
         const client = new LitJsSdk.LitNodeClient({
             litNetwork: "cayenne",
+            debug: true,
         });
         const chain = "ethereum";
         const accessControlConditions = [
@@ -99,13 +100,17 @@ export function EncryptAuthSig() {
         let myLit = new Lit(client)
         await myLit.connect()
 
-        const {    ciphertext,
+        const {  ciphertext,
             dataToEncryptHash} = await myLit.encrypt()
             console.log(ciphertext, dataToEncryptHash);
         myLit.decrypt(ciphertext,
             dataToEncryptHash, accessControlConditions).then((data)=>{
                 console.log(data)
             })
+
+        const data = await myLit.decrypt(ciphertext,
+              dataToEncryptHash, accessControlConditions)
+              console.log(data)
 
 
     }
