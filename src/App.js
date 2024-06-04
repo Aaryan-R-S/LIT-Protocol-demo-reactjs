@@ -2,12 +2,13 @@ import logo from './logo.svg';
 import './App.css';
 // import {Authentication} from "./components/Authentication";
 // import { CapacityCredits } from './components/CapacityCredits';
-// import { EncryptAuthSig } from './components/EncryptAuthSig';
+import { EncryptAuthSig } from './components/EncryptAuthSig';
 // import { SocialLogin } from './components/SocialLogin';
 // import { MintPkp } from './components/MintPkp';
-import { MintPkpContract } from './components/MintPkpContract';
+// import { MintPkpContract } from './components/MintPkpContract';
 // import { DiscordAuth } from './components/DiscordAuth';
 // import { AuthContext } from './components/AuthContext';
+// import {Sample} from './components/Sample';
 
 function App() {
   return (
@@ -27,12 +28,13 @@ function App() {
         </a>
       {/* <Authentication/> */}
       {/* <CapacityCredits/> */}
-      {/* <EncryptAuthSig/> */}
+      <EncryptAuthSig/>
       {/* <SocialLogin/> */}
       {/* <MintPkp/> */}
-      <MintPkpContract/>
+      {/* <MintPkpContract/> */}
       {/* <DiscordAuth/> */}
       {/* <AuthContext></AuthContext> */}
+      {/* <Sample/> */}
       </header>
     </div>
   );

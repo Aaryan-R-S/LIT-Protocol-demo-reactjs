@@ -16,7 +16,7 @@ export function MintPkpContract() {
 
         const contractClient = new LitContracts({
             signer: wallet,    // Your ethers wallet
-            network: 'cayenne',
+            network: 'habanero',
           });
           
         await contractClient.connect();
